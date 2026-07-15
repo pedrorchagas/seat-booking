@@ -1,0 +1,11 @@
+@Counter_HostAddress = http://0.0.0.0:5138
+
+GET {{Counter_HostAddress}}/todos/
+Accept: application/json
+
+###
+
+GET {{Counter_HostAddress}}/todos/1
+Accept: application/json
+
+###
