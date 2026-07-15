@@ -1,0 +1,8 @@
+{
+  "name": "seat-booking",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "features": {
+    "ghcr.io/devcontainers/features/dotnet:2": {}
+  }
+}
