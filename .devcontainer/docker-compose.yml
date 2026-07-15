@@ -1,6 +1,16 @@
 version: '3.8'
 
 services:
+  app:
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    container_name: app
+    volumes:
+      - ..:/workspace:cached
+    command: sleep infinity
+    depends_on:
+      - rabbitmq
+      - redis
+
   rabbitmq:
     image: rabbitmq:3-management-alpine
     container_name: rabbitmq

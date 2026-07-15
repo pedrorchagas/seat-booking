@@ -2,7 +2,29 @@
   "name": "seat-booking",
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
+  "workspaceFolder": "/workspace",
+
   "features": {
-    "ghcr.io/devcontainers/features/dotnet:2": {}
-  }
+    "ghcr.io/devcontainers/features/dotnet:2": {
+      "version": "8.0"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit"
+      ]
+    }
+  },
+
+  "forwardPorts": [5672, 15672, 6379],
+  "portsAttributes": {
+    "5672": { "label": "RabbitMQ AMQP" },
+    "15672": { "label": "RabbitMQ Management UI" },
+    "6379": { "label": "Redis" }
+  },
+
+  "postCreateCommand": "dotnet --version"
 }
